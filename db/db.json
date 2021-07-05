@@ -1,0 +1,237 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Imitation Game",
+      "description": "During World War II, mathematician Alan Turing tries to crack the enigma code with help from fellow mathematicians.",
+      "poster_image": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "poster_image_file": "images/posters/the_imitation_game.jpg",
+      "duration": 114,
+      "rating": 5,
+      "classification": "PG-13",
+      "year": "2014",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/S5CjKEFb-sM?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/S5CjKEFb-sM?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Doctor Strange",
+      "description": "While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.",
+      "poster_image": "http://www.goodillustration.com/blog/wp-content/uploads/2016/11/drstrange2.jpg",
+      "poster_image_file": "images/posters/doctor_strange.jpg",
+      "duration": 115,
+      "rating": 7.6,
+      "classification": "PG-13",
+      "year": "1982",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/DYyMsYgZDJM?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/DYyMsYgZDJM?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Blade Runner",
+      "description": "In a cyberpunk vision of the future, man has developed the technology to create replicants, human clones used to serve in the colonies outside Earth but with fixed lifespans. In Los Angeles, 2019, Deckard is a Blade Runner, a cop who specializes in terminating replicants. Originally in retirement, he is forced to re-enter the force when four replicants escape from an off-world colony to Earth.",
+      "poster_image": "https://www.bestmovieposters.co.uk/wp-content/uploads/2020/02/blade-runner-2049_e132720d-scaled.jpg",
+      "poster_image_file": "images/posters/blade_runner.jpg",
+      "duration": 117,
+      "rating": 8.3,
+      "classification": "PG-13",
+      "year": "1982",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/OMl_i8uJTOs?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/OMl_i8uJTOs?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    },
+    {
+      "id": 4,
+      "title": "The Dark Knight",
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.",
+      "poster_image": "https://images-na.ssl-images-amazon.com/images/I/51KnFPZUIAL._SY450_.jpg",
+      "poster_image_file": "images/posters/the_dark_knight.jpg",
+      "duration": 152,
+      "rating": 4.5,
+      "classification": "PG-13",
+      "year": "2008",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/zrXP6TYK8rY?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/zrXP6TYK8rY?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Inception",
+      "description": "A thief who steals corporate secrets through use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
+      "poster_image": "https://th.bing.com/th/id/OIP.jwL3Nwip7E6ErEVeYfBFGgHaLH?pid=ImgDet&rs=1",
+      "poster_image_file": "images/posters/inception.jpg",
+      "duration": 148,
+      "rating": 4,
+      "classification": "PG-13",
+      "year": "2010",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/RV9L7ui9Cn8?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/RV9L7ui9Cn8?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    },
+    {
+      "id": 6,
+      "title": "The Matrix",
+      "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "poster_image": "https://images-na.ssl-images-amazon.com/images/I/51k1epcewKL._SY300_.jpg",
+      "poster_image_file": "images/posters/the_matrix.jpg",
+      "duration": 136,
+      "rating": 4,
+      "classification": "R",
+      "year": "1999",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/vN_Hx_It3r0?rel=0&amp;showinfo=0",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/vN_Hx_It3r0?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
+      }
+    }
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "name": "Action"
+    },
+    {
+      "id": 2,
+      "name": "Fantasy"
+    },
+    {
+      "id": 3,
+      "name": "Adventure"
+    },
+    {
+      "id": 4,
+      "name": "Thriller"
+    },
+    {
+      "id": 5,
+      "name": "Drama"
+    },
+    {
+      "id": 6,
+      "name": "Biography"
+    },
+    {
+      "id": 7,
+      "name": "Sci-Fi"
+    },
+    {
+      "id": 8,
+      "name": "Crime"
+    },
+    {
+      "id": 9,
+      "name": "Mystery"
+    }
+  ],
+  "movies_genres": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "genreId": 4
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "genreId": 5
+    },
+    {
+      "id": 3,
+      "movieId": 1,
+      "genreId": 6
+    },
+    {
+      "id": 4,
+      "movieId": 2,
+      "genreId": 1
+    },
+    {
+      "id": 5,
+      "movieId": 2,
+      "genreId": 2
+    },
+    {
+      "id": 6,
+      "movieId": 2,
+      "genreId": 3
+    },
+    {
+      "id": 7,
+      "movieId": 3,
+      "genreId": 5
+    },
+    {
+      "id": 8,
+      "movieId": 3,
+      "genreId": 7
+    },
+    {
+      "id": 9,
+      "movieId": 3,
+      "genreId": 4
+    },
+    {
+      "id": 10,
+      "movieId": 4,
+      "genreId": 1
+    },
+    {
+      "id": 11,
+      "movieId": 4,
+      "genreId": 5
+    },
+    {
+      "id": 12,
+      "movieId": 4,
+      "genreId": 8
+    },
+    {
+      "id": 13,
+      "movieId": 5,
+      "genreId": 1
+    },
+    {
+      "id": 14,
+      "movieId": 5,
+      "genreId": 9
+    },
+    {
+      "id": 15,
+      "movieId": 5,
+      "genreId": 7
+    },
+    {
+      "id": 16,
+      "movieId": 6,
+      "genreId": 1
+    },
+    {
+      "id": 17,
+      "movieId": 6,
+      "genreId": 7
+    }
+  ]
+}
