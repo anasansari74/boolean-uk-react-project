@@ -13,30 +13,31 @@ const useStore = create((set, get) => ({
       .then((resp) => resp.json())
       .then((genre) => set({ genres: genre }));
   },
-  moviesGenres: [
-    {
-      id: 1,
-      movieId: 1,
-      genreId: 4,
-    },
-  ],
-  fetchMovies: () => {
-    fetch("http://localhost:3000/moviesGenres")
+  moviesGenres: [],
+  fetchMoviesGenres: () => {
+    fetch("http://localhost:3000/movies_genres")
       .then((resp) => resp.json())
       .then((movieGenre) => set({ moviesGenres: movieGenre }));
   },
-  selectedGenreId: "",
-  foundMoviesByGenreId: [],
-  // getFilteredMoviesByGenres: (genreId) => {
-  //   const foundGenre = moviesGenres.find(
-  //     (movieGenre) => genreId === movieGenre.id
-  //   );
-  //   const foundMoviesByGenre = movies.filter(
-  //     (movie) => foundGenre.movieId === movie.id
-  //   );
-  //   // return foundMoviesByGenre;
-  //   set({ getFilteredMoviesByGenres: foundMoviesByGenre });
-  // },
+  genre: "",
+  selectedGenre: (event) => {
+    set({ genre: event.target.value });
+  },
+  getFilteredMoviesByGenres: () => {
+    const foundGenre = get().moviesGenres.filter(
+      (movieGenre) => parseInt(get().genre) === movieGenre.genreId
+    );
+    if (get().genre === "") {
+      return get().movies;
+    } else {
+      const filteredMovies = foundGenre.map((movie) => {
+        let specificMovie = get().movies.find(
+          (target) => target.id === movie.movieId
+        );
+        return specificMovie;
+      });
+    }
+  },
 }));
 
 export default useStore;

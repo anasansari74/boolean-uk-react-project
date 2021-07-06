@@ -3,13 +3,26 @@ import { useEffect } from "react";
 import useStore from "../store";
 
 function MovieCards() {
-  const fetchMovies = useStore((store) => store.fetchMovies);
-
   const movies = useStore((store) => store.movies);
-
+  const moviesGenres = useStore((store) => store.moviesGenres);
+  const filteredMovies = useStore((store) => store.filteredMovies);
+  const fetchMovies = useStore((store) => store.fetchMovies);
+  const fetchMoviesGenres = useStore((store) => store.fetchMoviesGenres);
+  const genre = useStore((store) => store.genre);
+  const getFilteredMoviesByGenres = useStore(
+    (store) => store.getFilteredMoviesByGenres
+  );
   useEffect(() => {
     fetchMovies();
-  }, []);
+    fetchMoviesGenres();
+  }, [fetchMovies]);
+
+  moviesGenres.length && getFilteredMoviesByGenres();
+
+  // function displayMovies() {
+  //   genre === "" ? (const renderMovies = movies) : (const renderMovies = filteredMovies);
+  //   return renderMovies;
+  // }
 
   return movies.map((movie) => (
     <li className="card">

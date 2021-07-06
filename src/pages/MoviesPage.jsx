@@ -1,16 +1,11 @@
 import "./../styles/App.css";
 
-import { useState } from "react";
-
 import MovieCards from "../components/MovieCards";
+import useStore from "../store";
 
 function MoviesPage() {
-  const selectedGenreId = useStore((store) => store.selectedGenreId);
-  // const [selectedGenreId, setSelectedGenreId] = useState("");
-
-  function selectedGenre(event) {
-    setSelectedGenreId(event.target.value);
-  }
+  // const genre = useStore((store) => store.genre);
+  const selectedGenre = useStore((store) => store.selectedGenre);
 
   return (
     <>
