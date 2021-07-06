@@ -1,14 +1,23 @@
 import "./../styles/App.css";
 
+import { useState } from "react";
+
 import MovieCards from "../components/MovieCards";
 
 function MoviesPage() {
+  const selectedGenreId = useStore((store) => store.selectedGenreId);
+  // const [selectedGenreId, setSelectedGenreId] = useState("");
+
+  function selectedGenre(event) {
+    setSelectedGenreId(event.target.value);
+  }
+
   return (
     <>
       <div className="drop-down-forms">
         <form acion="submit" method="get">
           <label htmlFor="movie-genre">Choose a genre:</label>
-          <select name="genre" id="movie-genre">
+          <select onChange={selectedGenre} name="genre" id="movie-genre">
             <option value="">All</option>
             <option value="1">Action</option>
             <option value="2">Fantasy</option>
