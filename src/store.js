@@ -23,11 +23,11 @@ const useStore = create((set, get) => ({
   selectedGenre: (event) => {
     set({ genre: event.target.value });
   },
-  getFilteredMoviesByGenres: () => {
+  getFilteredMoviesByGenres: (target) => {
     const foundGenre = get().moviesGenres.filter(
-      (movieGenre) => parseInt(get().genre) === movieGenre.genreId
+      (movieGenre) => parseInt(target) === movieGenre.genreId
     );
-    if (get().genre === "") {
+    if (target === "") {
       return get().movies;
     } else {
       const filteredMovies = foundGenre.map((movie) => {
@@ -36,6 +36,8 @@ const useStore = create((set, get) => ({
         );
         return specificMovie;
       });
+      // console.log(filteredMovies);
+      return filteredMovies;
     }
   },
 }));

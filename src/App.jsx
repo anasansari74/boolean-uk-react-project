@@ -2,7 +2,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "./components/Header";
 import MoviesPage from "./pages/MoviesPage";
-import UserRatingsPage from "./pages/UserRatingsPage";
+import YourRatings from "./pages/YourRatings";
+import YourFavourites from "./pages/YourFavourites";
 
 import "./styles/App.css";
 
@@ -17,8 +18,11 @@ function App() {
         <Route exact path="/movies">
           <MoviesPage />
         </Route>
-        <Route exact path="/user-ratings">
-          <UserRatingsPage />
+        <Route exact path="/your-ratings">
+          <YourRatings />
+        </Route>
+        <Route exact path="/your-favourites">
+          <YourFavourites />
         </Route>
         <Route>
           <h1>Page NOT found!</h1>
