@@ -7,8 +7,6 @@ function MovieCards() {
 
   const movies = useStore((store) => store.movies);
 
-  console.log("movies", movies);
-
   useEffect(() => {
     fetchMovies();
   }, []);
