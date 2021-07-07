@@ -4,8 +4,8 @@ import MovieCards from "../components/MovieCards";
 import useStore from "../store";
 
 function MoviesPage() {
-  // const genre = useStore((store) => store.genre);
   const selectedGenre = useStore((store) => store.selectedGenre);
+  const selectedRatingOrder = useStore((store) => store.selectedRatingOrder);
 
   return (
     <>
@@ -28,7 +28,7 @@ function MoviesPage() {
         </form>
         <form action="submit" method="get">
           <label htmlFor="rating">Rating:</label>
-          <select name="rating" id="rating">
+          <select onChange={selectedRatingOrder} name="rating" id="rating">
             <option value="">--Please choose an option--</option>
             <option value="1">High to Low</option>
             <option value="2">Low to High</option>

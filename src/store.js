@@ -36,9 +36,23 @@ const useStore = create((set, get) => ({
         );
         return specificMovie;
       });
-      // console.log(filteredMovies);
       return filteredMovies;
     }
+  },
+  // ratingOrder: "",
+  // selectedRatingOrder: (event) => {
+  //   set({ ratingOrder: event.target.value });
+  // },
+  // getRatingOrder: (target) => {
+  //   if (parseInt(get().ratingOrder) === 2) {
+  //     const lowToHigh = get().movies.rating.sort();
+  //     return lowToHigh;
+  //   } else return null;
+  // },
+  favourites: [],
+  addToFavourites: (movieId) => {
+    const movieFound = get().movies.find((movie) => movie.id === movieId);
+    get().favourites.push(movieFound);
   },
 }));
 

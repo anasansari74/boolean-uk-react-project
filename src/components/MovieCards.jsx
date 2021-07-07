@@ -9,16 +9,20 @@ function MovieCards() {
   const getFilteredMoviesByGenres = useStore(
     (store) => store.getFilteredMoviesByGenres
   );
+  // const ratingOrder = useStore((store) => store.ratingOrder);
+  // const getRatingOrder = useStore((store) => store.getRatingOrder);
+  const addToFavourites = useStore((store) => store.addToFavourites);
+
   useEffect(() => {
     fetchMovies();
     fetchMoviesGenres();
   }, [fetchMovies, fetchMoviesGenres]);
 
-  return getFilteredMoviesByGenres(genre).map((movie) => (
-    <li className="card">
+  return getFilteredMoviesByGenres(genre).map((movie, index) => (
+    <li key={index} className="card">
       <div className="card-header">
         <h1>{movie.title}</h1>
-        <input type="checkbox" className="star-checkbox" checked="true" />
+        {/* <input type="checkbox" className="star-checkbox" checked="true" /> */}
       </div>
       <img
         className=""
@@ -29,7 +33,17 @@ function MovieCards() {
       />
       <p>Rated: {movie.rating}/10</p>
       <p>Description: {movie.description}</p>
-      <button>Rate Me!</button>
+      <div>
+        <button style={{ padding: "10px" }}>Rate Me!</button>
+        <button
+          style={{ padding: "10px" }}
+          onClick={() => {
+            addToFavourites(movie.id);
+          }}
+        >
+          Add to Favourites
+        </button>
+      </div>
     </li>
   ));
 }
