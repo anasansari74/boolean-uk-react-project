@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import MoviesPage from "./pages/MoviesPage";
 import YourRatings from "./pages/YourRatings";
 import YourFavourites from "./pages/YourFavourites";
+import ModalContainer from "./modals/ModalContainer";
 
 import "./styles/App.css";
 
@@ -28,6 +29,7 @@ function App() {
           <h1>Page NOT found!</h1>
         </Route>
       </Switch>
+      <ModalContainer />
     </div>
   );
 }

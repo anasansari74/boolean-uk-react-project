@@ -5,7 +5,7 @@ const useStore = create((set, get) => ({
   fetchMovies: () => {
     fetch("http://localhost:3000/movies")
       .then((resp) => resp.json())
-      .then((movie) => set({ movies: movie }));
+      .then((movies) => set({ movies: movies }));
   },
   genres: [],
   fetchGenres: () => {
@@ -52,8 +52,19 @@ const useStore = create((set, get) => ({
   favourites: [],
   addToFavourites: (movieId) => {
     const movieFound = get().movies.find((movie) => movie.id === movieId);
-    get().favourites.push(movieFound);
+    set({ favourites: [...get().favourites, movieFound] });
   },
+
+  modal: "",
+  setModal: (modal) => set({ modal }),
+  closeModal: () => set({ modal: "" }),
+
+  ascend: points.sort(function (a, b) {
+    return a - b;
+  }),
+  descend: points.sort(function (a, b) {
+    return b - a;
+  }),
 }));
 
 export default useStore;
