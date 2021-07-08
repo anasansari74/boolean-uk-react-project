@@ -6,16 +6,11 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 
 function MovieCards() {
-  const getModalInfo = useStore((store) => store.getModalInfo);
-
-  const genre = useStore((store) => store.genre);
   const fetchMovies = useStore((store) => store.fetchMovies);
   const fetchMoviesGenres = useStore((store) => store.fetchMoviesGenres);
-  const getFilteredMoviesByGenres = useStore(
-    (store) => store.getFilteredMoviesByGenres
-  );
-  // const ratingOrder = useStore((store) => store.ratingOrder);
-  // const getRatingOrder = useStore((store) => store.getRatingOrder);
+
+  const films = useStore((store) => store.getSortedFilms());
+  const getModalInfo = useStore((store) => store.getModalInfo);
   const addToFavourites = useStore((store) => store.addToFavourites);
   const scrollTop = useStore((store) => store.scrollTop);
 
@@ -24,7 +19,7 @@ function MovieCards() {
     fetchMoviesGenres();
   }, [fetchMovies, fetchMoviesGenres]);
 
-  return getFilteredMoviesByGenres(genre).map((movie, index) => (
+  return films.map((movie, index) => (
     <li key={index} className="card">
       <div className="card-header">
         <h1>{movie.title}</h1>
@@ -49,7 +44,7 @@ function MovieCards() {
           variant="contained"
           color="secondary"
           onClick={() => {
-            getModalInfo("rateMeForm", `${movie.title}`, `${movie.rating}`);
+            getModalInfo("rateMeForm", movie);
             scrollTop();
           }}
         >

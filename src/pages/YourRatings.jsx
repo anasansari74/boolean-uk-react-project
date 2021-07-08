@@ -6,10 +6,20 @@ function YourRatings({ className }) {
   return (
     <ul className={`cards ${className}`}>
       <li className="card">
-        <h1>Movie Name:</h1>
-        <h1>Movie Rating:</h1>
-        <h2>Your Rating:</h2>
-        <h3>Your Comment:</h3>
+        <h1>The Imitation Game</h1>
+        <h3>Movie Rating: 5</h3>
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/M/MV5BOTgwMzFiMWYtZDhlNS00ODNkLWJiODAtZDVhNzgyNzJhYjQ4L2ltYWdlXkEyXkFqcGdeQXVyNzEzOTYxNTQ@._V1_UX182_CR0,0,182,268_AL_.jpg"
+          alt=""
+          height="200px"
+        />
+        <h1>Your Rating: 10</h1>
+        <h3>Your Comment: </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+          inventore voluptate dolorum tempora dicta, quidem id quas eligendi.
+          Ipsam, sapiente?
+        </p>
         <Button style={{ margin: "10px" }} variant="contained">
           Edit
         </Button>
