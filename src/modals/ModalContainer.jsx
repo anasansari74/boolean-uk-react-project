@@ -5,7 +5,7 @@ import RateMeForm from "./RateMeForm";
 
 const modals = {
   "": null,
-  rateMeFrom: RateMeForm,
+  rateMeForm: RateMeForm,
 };
 
 function ModalContainer({ className }) {
@@ -17,14 +17,14 @@ function ModalContainer({ className }) {
   if (!modal) return null;
 
   return (
-    <div className={`modal-container ${className}`}>
-      <div className="modal">
+    <ul className={`modal-container ${className}`}>
+      <li className="modal">
         <button className="close-modal" onClick={closeModal}>
           &times;
         </button>
         <Modal />
-      </div>
-    </div>
+      </li>
+    </ul>
   );
 }
 
@@ -59,10 +59,11 @@ export default styled(ModalContainer)`
     top: -10px;
     right: -10px;
 
+    align-self: center;
     justify-self: end;
     border-radius: 50%;
-    border: solid 1px var(--background-stripe);
-    background-color: var(--background-stripe);
+    border: solid 1px royalblue;
+    background-color: royalblue;
 
     width: 40px;
     height: 40px;

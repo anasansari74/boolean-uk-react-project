@@ -3,20 +3,10 @@ import { useEffect } from "react";
 import useStore from "../store";
 
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
 function MovieCards() {
-  const classes = useStyles();
-  const setModal = useStore((store) => store.setModal);
+  const getModalInfo = useStore((store) => store.getModalInfo);
 
   const genre = useStore((store) => store.genre);
   const fetchMovies = useStore((store) => store.fetchMovies);
@@ -27,6 +17,7 @@ function MovieCards() {
   // const ratingOrder = useStore((store) => store.ratingOrder);
   // const getRatingOrder = useStore((store) => store.getRatingOrder);
   const addToFavourites = useStore((store) => store.addToFavourites);
+  const scrollTop = useStore((store) => store.scrollTop);
 
   useEffect(() => {
     fetchMovies();
@@ -57,7 +48,10 @@ function MovieCards() {
           style={{ margin: "10px" }}
           variant="contained"
           color="secondary"
-          onClick={() => setModal("newUser")}
+          onClick={() => {
+            getModalInfo("rateMeForm", `${movie.title}`, `${movie.rating}`);
+            scrollTop();
+          }}
         >
           Rate Me!
         </Button>

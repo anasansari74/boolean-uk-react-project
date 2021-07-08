@@ -2,30 +2,35 @@ import styled from "styled-components";
 
 import useStore from "../store";
 
-function RateMeForm() {
+function RateMeForm({ className }) {
   //   const fetchUsers = useStore(store => store.fetchUsers)
   const closeModal = useStore((store) => store.closeModal);
+  const modalMovieName = useStore((store) => store.modalMovieName);
+  const modalMovieRating = useStore((store) => store.modalMovieRating);
+  const postRating = useStore((store) => store.postRating);
 
   function handleSubmit(event) {
     event.preventDefault();
     const formEl = event.target;
 
     const rateMeFormData = {
-      yourRating: formEl.firstName.value,
-      reasonForRating: formEl.lastName.value,
+      movieName: modalMovieName,
+      movieRating: modalMovieRating,
+      yourRating: formEl.yourRating.value,
+      reasonForRating: formEl.reasonForRating.value,
     };
-
-    // API.createUser(newUserData).then(fetchUsers).then(closeModal);
+    //almost last step: create a fetch function to POST
+    postRating(rateMeFormData);
   }
 
   return (
-    <div>
+    <div className={`form-modal ${className}`}>
       <form onSubmit={handleSubmit}>
         <h1 className="modal-title">Enter your Rating for:</h1>
-        <h2>Movie Name:</h2>
-        <h2>Movie Rating:</h2>
+        <h2 className="movie-to-rate">{modalMovieName}</h2>
+        <h2 className="movie-to-rate">Movie Rating: {modalMovieRating}</h2>
         <label htmlFor="yourRating">Choose a rating:</label>
-        <select name="yourRating" id="yourRating">
+        <select className="drop-down" name="yourRating" id="yourRating">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -53,20 +58,32 @@ function RateMeForm() {
 }
 
 export default styled(RateMeForm)`
+  width: 35vw;
+  height: auto;
+
   form {
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 1px;
   }
 
   .modal-title {
     text-align: center;
   }
 
+  .movie-to-rate {
+    color: royalblue;
+  }
+
   input {
     border: solid 1px black;
   }
 
-  .create-user {
+  .drop-down {
+    width: 25%;
+    justify-self: center;
+  }
+
+  .submit-rating {
     text-align: center;
     justify-self: center;
 

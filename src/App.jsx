@@ -29,6 +29,7 @@ function App() {
           <h1>Page NOT found!</h1>
         </Route>
       </Switch>
+
       <ModalContainer />
     </div>
   );

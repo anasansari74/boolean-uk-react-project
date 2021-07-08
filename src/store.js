@@ -27,7 +27,7 @@ const useStore = create((set, get) => ({
     const foundGenre = get().moviesGenres.filter(
       (movieGenre) => parseInt(target) === movieGenre.genreId
     );
-    if (target === "") {
+    if (target === "All") {
       return get().movies;
     } else {
       const filteredMovies = foundGenre.map((movie) => {
@@ -49,6 +49,13 @@ const useStore = create((set, get) => ({
   //     return lowToHigh;
   //   } else return null;
   // },
+
+  // lowToHigh: points.sort(function (a, b) {
+  //   return a - b;
+  // }),
+  // highToLow: points.sort(function (a, b) {
+  //   return b - a;
+  // }),
   favourites: [],
   addToFavourites: (movieId) => {
     const movieFound = get().movies.find((movie) => movie.id === movieId);
@@ -57,14 +64,32 @@ const useStore = create((set, get) => ({
 
   modal: "",
   setModal: (modal) => set({ modal }),
+
+  modalMovieName: "",
+  setModalMovieName: (movieName) => set({ modalMovieName: movieName }),
+
+  modalMovieRating: "",
+  setModalMovieRating: (movieRating) => set({ modalMovieRating: movieRating }),
+
   closeModal: () => set({ modal: "" }),
 
-  ascend: points.sort(function (a, b) {
-    return a - b;
-  }),
-  descend: points.sort(function (a, b) {
-    return b - a;
-  }),
+  getModalInfo: (modal, movieName, movieRating) => {
+    get().setModal(modal);
+    get().setModalMovieName(movieName);
+    get().setModalMovieRating(movieRating);
+  },
+
+  scrollTop: () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  },
+
+  postRating: (target) => {
+    fetch("http://localhost:3000/ratings", {
+      method: "POST",
+      headers: { "Content-Type": "application.json" },
+      body: JSON.stringify(target),
+    });
+  },
 }));
 
 export default useStore;

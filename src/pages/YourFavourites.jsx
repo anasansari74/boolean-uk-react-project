@@ -2,7 +2,6 @@ import useStore from "../store";
 
 export default function YourFavourites() {
   const favourites = useStore((store) => store.favourites);
-  const findMovieById = useStore((store) => store.findMovieById);
 
   return (
     <div>
@@ -11,6 +10,7 @@ export default function YourFavourites() {
           <li key={index} className="card">
             <div className="card-header">
               <h1>{favMovie.title}</h1>
+              <input type="checkbox" className="star-checkbox" checked="true" />
             </div>
             <img
               className=""

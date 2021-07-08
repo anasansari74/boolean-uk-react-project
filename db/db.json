@@ -107,6 +107,24 @@
         "frameborder": 0,
         "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/vN_Hx_It3r0?rel=0&amp;showinfo=0\" frameborder=\"0\"></iframe>"
       }
+    },
+    {
+      "id": 7,
+      "title": "The Demon Slayer Movie",
+      "description": "Tanjiro, Nezuko, Zenitsu, and Inosuke board a train to assist the Flame Hashira Kyōjurō Rengoku in his mission to hunt for a demon that has killed many demon slayers. Soon after boarding, all of them are enchanted and fall into a deep sleep. ... During their sleep, Tanjiro and his companions have happy dreams.",
+      "poster_image": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_UX144_CR0,1,144,213_.jpg",
+      "poster_image_file": "N/A",
+      "duration": 117,
+      "rating": 9.5,
+      "classification": "PG-13",
+      "year": "2021",
+      "trailer": {
+        "width": 560,
+        "height": 315,
+        "src": "https://www.youtube.com/embed/bFwdl2PDAFM",
+        "frameborder": 0,
+        "iframe": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/bFwdl2PDAFM\" frameborder=\"0\"></iframe>"
+      }
     }
   ],
   "genres": [
@@ -232,6 +250,22 @@
       "id": 17,
       "movieId": 6,
       "genreId": 7
+    },
+    {
+      "id": 18,
+      "movieId": 7,
+      "genreId": 1
+    },
+    {
+      "id": 19,
+      "movieId": 7,
+      "genreId": 2
+    },
+    {
+      "id": 20,
+      "movieId": 7,
+      "genreId": 3
     }
-  ]
+  ],
+  "ratings": []
 }

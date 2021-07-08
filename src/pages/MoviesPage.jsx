@@ -14,7 +14,7 @@ function MoviesPage() {
           <label htmlFor="movie-genre">Choose a genre:</label>
           <select onChange={selectedGenre} name="genre" id="movie-genre">
             <option value="">--Please choose an option--</option>
-            <option value="">All</option>
+            <option value="All">All</option>
             <option value="1">Action</option>
             <option value="2">Fantasy</option>
             <option value="3">Adventure</option>
@@ -35,7 +35,7 @@ function MoviesPage() {
           </select>
         </form>
       </div>
-      <ul className="cards">
+      <ul id="list-top" className="cards">
         <MovieCards />
       </ul>
     </>
