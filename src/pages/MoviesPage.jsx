@@ -10,7 +10,7 @@ function MoviesPage() {
   return (
     <>
       <div className="drop-down-forms">
-        <form acion="submit" method="get">
+        <div>
           <label htmlFor="movie-genre">Choose a genre:</label>
           <select onChange={selectedGenre} name="genre" id="movie-genre">
             <option value="">--Please choose an option--</option>
@@ -25,8 +25,8 @@ function MoviesPage() {
             <option value="8">Crime</option>
             <option value="9">Mystery</option>
           </select>
-        </form>
-        <form action="submit" method="get">
+        </div>
+        <div>
           <label htmlFor="rating">Rating:</label>
           <select
             onChange={(event) => {
@@ -39,7 +39,7 @@ function MoviesPage() {
             <option value="1">High to Low</option>
             <option value="2">Low to High</option>
           </select>
-        </form>
+        </div>
       </div>
       <ul id="list-top" className="cards">
         <MovieCards />

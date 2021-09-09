@@ -5,21 +5,24 @@ import useStore from "../store";
 import Button from "@material-ui/core/Button";
 
 function RateMeForm({ className }) {
-  const closeModal = useStore((store) => store.closeModal);
   const modalMovie = useStore((store) => store.modalMovie);
   const postRating = useStore((store) => store.postRating);
-  console.log("rateMeFormData");
+  const closeModal = useStore((store) => store.closeModal);
 
   function handleSubmit(event) {
     event.preventDefault();
     const formEl = event.target;
 
     const rateMeFormData = {
-      modalMovie: modalMovie,
+      title: modalMovie.title,
+      poster_image: modalMovie.poster_image,
+      rating: modalMovie.rating,
       yourRating: formEl.yourRating.value,
-      reasonForRating: formEl.reasonForRating.value,
+      comment: formEl.reasonForRating.value,
     };
-    console.log(rateMeFormData);
+    postRating(rateMeFormData);
+
+    closeModal();
   }
 
   return (
@@ -140,10 +143,6 @@ export default styled(RateMeForm)`
     border-top: 3px solid black;
     width: 2.2rem;
     margin: 0 auto;
-  }
-
-  input {
-    border: solid 1px black;
   }
 
   .drop-down {

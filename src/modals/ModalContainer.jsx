@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 import useStore from "../store";
+import EditMeForm from "./EditMeForm";
 import RateMeForm from "./RateMeForm";
 
 const modals = {
   "": null,
   rateMeForm: RateMeForm,
+  editMeForm: EditMeForm,
 };
 
 function ModalContainer({ className }) {

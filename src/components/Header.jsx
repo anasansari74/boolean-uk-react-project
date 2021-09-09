@@ -17,11 +17,11 @@ function Header() {
       </Link>
       <div className="space"></div>
       <div className="nav-buttons">
-        <Link className="nav-link" to="/movies">
+        {/* <Link className="nav-link" to="/movies">
           <Button variant="contained" color="primary">
             Movies
           </Button>
-        </Link>
+        </Link> */}
         <Link className="nav-link" to="/your-ratings">
           <Button variant="contained" color="primary">
             Your Ratings

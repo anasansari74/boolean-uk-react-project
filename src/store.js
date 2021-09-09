@@ -80,7 +80,12 @@ const useStore = create((set, get) => ({
   favourites: [],
   addToFavourites: (movieId) => {
     const movieFound = get().movies.find((movie) => movie.id === movieId);
-    set({ favourites: [...get().favourites, movieFound] });
+    const movieFoundInFav = get().favourites.find(
+      (favBook) => favBook.id === movieId
+    );
+    if (movieFoundInFav === undefined) {
+      set({ favourites: [...get().favourites, movieFound] });
+    }
   },
 
   modal: "",
@@ -100,14 +105,50 @@ const useStore = create((set, get) => ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   },
 
+  ratings: [],
+
+  fetchRatings: () => {
+    fetch("http://localhost:3000/ratings")
+      .then((resp) => resp.json())
+      .then((rating) => set({ ratings: rating }));
+  },
+
   postRating: (target) => {
     fetch("http://localhost:3000/ratings", {
       method: "POST",
-      headers: { "Content-Type": "application.json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(target),
     })
       .then((resp) => resp.json())
-      .then((rating) => set({ ratings: rating }));
+      .then((rating) => set({ ratings: [...get().ratings, rating] }));
+  },
+
+  editRating: (target, id) => {
+    fetch(`http://localhost:3000/ratings/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(target),
+    })
+      .then((resp) => resp.json())
+      .then((updateRatingFromServer) =>
+        set({
+          ratings: get().ratings.map((target) => {
+            if (target.id === updateRatingFromServer.id) {
+              return updateRatingFromServer;
+            } else return target;
+          }),
+        })
+      );
+  },
+
+  deleteRating: (id) => {
+    fetch(`http://localhost:3000/ratings/${id}`, {
+      method: "DELETE",
+    }).then(() =>
+      set({
+        ratings: get().ratings.filter((target) => target.id !== id),
+      })
+    );
   },
 }));
 

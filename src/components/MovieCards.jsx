@@ -11,8 +11,8 @@ function MovieCards() {
 
   const films = useStore((store) => store.getSortedFilms());
   const getModalInfo = useStore((store) => store.getModalInfo);
-  const addToFavourites = useStore((store) => store.addToFavourites);
   const scrollTop = useStore((store) => store.scrollTop);
+  const addToFavourites = useStore((store) => store.addToFavourites);
 
   useEffect(() => {
     fetchMovies();
@@ -45,6 +45,7 @@ function MovieCards() {
           color="secondary"
           onClick={() => {
             getModalInfo("rateMeForm", movie);
+            console.log(movie);
             scrollTop();
           }}
         >

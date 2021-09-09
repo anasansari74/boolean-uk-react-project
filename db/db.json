@@ -267,5 +267,14 @@
       "genreId": 3
     }
   ],
-  "ratings": []
+  "ratings": [
+    {
+      "id": 1,
+      "title": "The Demon Slayer Movie",
+      "poster_image": "https://m.media-amazon.com/images/M/MV5BODI2NjdlYWItMTE1ZC00YzI2LTlhZGQtNzE3NzA4MWM0ODYzXkEyXkFqcGdeQXVyNjU1OTg4OTM@._V1_UX144_CR0,1,144,213_.jpg",
+      "rating": 9.5,
+      "yourRating": "10",
+      "comment": "This is such an amazing movie! I can't believe my friends Mr.Knee Colas and Mrs. Dictator didn't rate it so highly"
+    }
+  ]
 }
